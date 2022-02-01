@@ -24,6 +24,7 @@ function App() {
     });
 
     return unsubscribe;
+    // eslint-disable-next-line
   }, []);
   return (
     <Container fluid className="p-0 vh-100">
