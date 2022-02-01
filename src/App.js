@@ -1,22 +1,22 @@
 import Home from "./pages/home";
-import { useEffect, useState } from "react";
-import { Routes, Route } from "react-router-dom";
-import Container from "react-bootstrap/Container";
-import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "./firebase/firebase";
 import { useDispatch } from "react-redux";
-import { setUser } from "./redux/features/userSlice";
-import PublicRoute from "./componets/PublicRoute";
-import PrivateRoute from "./componets/PrivateRoute";
-import { Loader } from "./componets/Loader";
-import { NotFound } from "./componets/NotFound";
 import Dashboard from "./pages/dashboard";
-import { DashboardHome } from "./pages/dashboard/dashboardHome";
 import { Me } from "./pages/dashboard/me";
+import { auth } from "./firebase/firebase";
+import { useEffect, useState } from "react";
+import { Loader } from "./componets/Loader";
+import { Routes, Route } from "react-router-dom";
+import { NotFound } from "./componets/NotFound";
+import Container from "react-bootstrap/Container";
 import { EditMe } from "./pages/dashboard/editMe";
+import PublicRoute from "./componets/PublicRoute";
+import { onAuthStateChanged } from "firebase/auth";
+import PrivateRoute from "./componets/PrivateRoute";
+import { setUser } from "./redux/features/userSlice";
 import { Contractors } from "./pages/dashboard/contractors";
 import { Contractor } from "./pages/dashboard/contractor";
 import { NewContractor } from "./pages/dashboard/newContractor";
+import { DashboardHome } from "./pages/dashboard/dashboardHome";
 
 function App() {
   const dispatch = useDispatch();
@@ -66,8 +66,8 @@ function App() {
           <Route path="me" element={<Me />} />
           <Route path="me/edit" element={<EditMe />} />
           <Route path="contractors" element={<Contractors />} />
-          <Route path="contractors/:id" element={<Contractor />} />
           <Route path="contractors/new" element={<NewContractor />} />
+          <Route path="contractors/:contractorId" element={<Contractor />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>

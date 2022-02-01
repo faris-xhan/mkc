@@ -12,5 +12,5 @@ const firebaseCofig = {
 };
 
 export const app = getApps().length ? getApp() : initializeApp(firebaseCofig);
-export const db = getFirestore();
+export const db = getFirestore(app);
 export const auth = getAuth();
