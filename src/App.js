@@ -10,6 +10,7 @@ import PublicRoute from "./componets/PublicRoute";
 import PrivateRoute from "./componets/PrivateRoute";
 import { Loader } from "./componets/Loader";
 import { NotFound } from "./componets/NotFound";
+import Dashboard from "./pages/dashboard";
 
 function App() {
   const dispatch = useDispatch();
@@ -49,7 +50,7 @@ function App() {
           path="/dashboard"
           element={
             <PrivateRoute>
-              <h1>Dashboard</h1>
+              <Dashboard />
             </PrivateRoute>
           }
         />
