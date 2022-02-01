@@ -12,6 +12,8 @@ import { Loader } from "./componets/Loader";
 import { NotFound } from "./componets/NotFound";
 import Dashboard from "./pages/dashboard";
 import { DashboardHome } from "./pages/dashboard/dashboardHome";
+import { Me } from "./pages/dashboard/me";
+import { EditMe } from "./pages/dashboard/editMe";
 
 function App() {
   const dispatch = useDispatch();
@@ -58,6 +60,8 @@ function App() {
           }
         >
           <Route index element={<DashboardHome />} />
+          <Route path="me" element={<Me />} />
+          <Route path="me/edit" element={<EditMe />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
