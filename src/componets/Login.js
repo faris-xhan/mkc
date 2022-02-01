@@ -24,12 +24,13 @@ export default function Login(props) {
     setLoading(true);
     signInWithEmailAndPassword(auth, email, password)
       .then((user) => {
+        setLoading(false);
         navigate("/dashboard");
       })
       .catch((error) => {
         setError("Failed to log in.");
-      })
-      .finally(() => setLoading(false));
+        setLoading(false);
+      });
   };
 
   return (

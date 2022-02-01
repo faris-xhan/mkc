@@ -11,6 +11,7 @@ import PrivateRoute from "./componets/PrivateRoute";
 import { Loader } from "./componets/Loader";
 import { NotFound } from "./componets/NotFound";
 import Dashboard from "./pages/dashboard";
+import { DashboardHome } from "./pages/dashboard/dashboardHome";
 
 function App() {
   const dispatch = useDispatch();
@@ -26,6 +27,8 @@ function App() {
           uid: user.uid,
         };
         dispatch(setUser(u));
+      } else {
+        dispatch(setUser({}));
       }
       setLoading(false);
     });
@@ -53,7 +56,9 @@ function App() {
               <Dashboard />
             </PrivateRoute>
           }
-        />
+        >
+          <Route index element={<DashboardHome />} />
+        </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Container>
