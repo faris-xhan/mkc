@@ -1,22 +1,35 @@
-import Form from "react-bootstrap/Form";
 import FormGroup from "react-bootstrap/FormGroup";
 import FormLabel from "react-bootstrap/FormLabel";
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
-import { useState } from "react";
+import Form from "react-bootstrap/Form";
 import { Alert } from "react-bootstrap";
+import { useState } from "react";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase/firebase";
+import { useNavigate } from "react-router-dom";
 
 export default function Login(props) {
-  const [error, setError] = useState("sss");
+  const navigate = useNavigate();
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const areInputsEmpty = email === "" || password === "";
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    if (areInputsEmpty) return;
-    alert(email + " " + password);
-    setError("");
+    if (areInputsEmpty || loading) return;
+
+    setLoading(true);
+    signInWithEmailAndPassword(auth, email, password)
+      .then((user) => {
+        navigate("/dashboard");
+      })
+      .catch((error) => {
+        setError("Failed to log in.");
+      })
+      .finally(() => setLoading(false));
   };
 
   return (
@@ -49,7 +62,7 @@ export default function Login(props) {
           onChange={(e) => setPassword(e.target.value)}
         />
       </FormGroup>
-      <Button type="submit" disabled={areInputsEmpty}>
+      <Button type="submit" disabled={areInputsEmpty || loading}>
         Login
       </Button>
     </Form>
