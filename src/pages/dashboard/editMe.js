@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 import { Alert } from "react-bootstrap";
 import { updateEmail, updatePassword, updateProfile } from "firebase/auth";
 import { auth } from "../../firebase/firebase";
+import { FormItem } from "../../componets/FormItem";
 
 export const EditMe = (props) => {
   const dispatch = useDispatch();
@@ -122,19 +123,5 @@ export const EditMe = (props) => {
         </Form.Group>
       </Form>
     </Container>
-  );
-};
-
-const FormItem = (props) => {
-  const { controlId, label, ...rest } = props;
-  return (
-    <Form.Group as={Row} className="mb-3" controlId={controlId}>
-      <Form.Label column sm={2}>
-        {label}
-      </Form.Label>
-      <Col sm={10}>
-        <Form.Control {...rest} />
-      </Col>
-    </Form.Group>
   );
 };

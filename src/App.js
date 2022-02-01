@@ -14,6 +14,9 @@ import Dashboard from "./pages/dashboard";
 import { DashboardHome } from "./pages/dashboard/dashboardHome";
 import { Me } from "./pages/dashboard/me";
 import { EditMe } from "./pages/dashboard/editMe";
+import { Contractors } from "./pages/dashboard/contractors";
+import { Contractor } from "./pages/dashboard/contractor";
+import { NewContractor } from "./pages/dashboard/newContractor";
 
 function App() {
   const dispatch = useDispatch();
@@ -62,6 +65,9 @@ function App() {
           <Route index element={<DashboardHome />} />
           <Route path="me" element={<Me />} />
           <Route path="me/edit" element={<EditMe />} />
+          <Route path="contractors" element={<Contractors />} />
+          <Route path="contractors/:id" element={<Contractor />} />
+          <Route path="contractors/new" element={<NewContractor />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
