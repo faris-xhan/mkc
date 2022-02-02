@@ -4,13 +4,13 @@ import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import { useDispatch, useSelector } from "react-redux";
-import { selectUser, setUser } from "../../../redux/features/userSlice";
+import { selectUser, setUser } from "../../redux/features/userSlice";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Alert } from "react-bootstrap";
 import { updateEmail, updatePassword, updateProfile } from "firebase/auth";
-import { auth } from "../../../firebase/firebase";
-import { FormItem } from "../../../componets/FormItem";
+import { auth } from "../../firebase/firebase";
+import { FormItem } from "../../componets/FormItem";
 
 export const EditMe = (props) => {
   const dispatch = useDispatch();

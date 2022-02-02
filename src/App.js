@@ -8,7 +8,7 @@ import { Loader } from "./componets/Loader";
 import { Routes, Route } from "react-router-dom";
 import { NotFound } from "./componets/NotFound";
 import Container from "react-bootstrap/Container";
-import { EditMe } from "./pages/dashboard/contractors/editMe";
+import { EditMe } from "./pages/dashboard/editMe";
 import PublicRoute from "./componets/PublicRoute";
 import { onAuthStateChanged } from "firebase/auth";
 import PrivateRoute from "./componets/PrivateRoute";
@@ -21,6 +21,7 @@ import { EditContractor } from "./pages/dashboard/contractors/editContractors";
 import { Departments } from "./pages/dashboard/departments/departments";
 import { NewDepartment } from "./pages/dashboard/departments/newDepartment";
 import { EditDepartment } from "./pages/dashboard/departments/editDepartment";
+import { Department } from "./pages/dashboard/departments/department";
 
 function App() {
   const dispatch = useDispatch();
@@ -78,6 +79,7 @@ function App() {
           />
           <Route path="departments" element={<Departments />} />
           <Route path="departments/new" element={<NewDepartment />} />
+          <Route path="departments/:departmentId" element={<Department />} />
           <Route
             path="departments/edit/:departmentId"
             element={<EditDepartment />}
