@@ -81,9 +81,13 @@ export const EditContractor = (props) => {
                 type="submit"
                 disabled={formData?.firstName === "" || loading}
               >
-                Save
+                Update
               </Button>
-              <Button variant="warning" className="mx-2">
+              <Button
+                variant="warning"
+                onClick={() => navigate("/dashboard/contractors")}
+                className="mx-2"
+              >
                 Cancel
               </Button>
             </Col>

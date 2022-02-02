@@ -78,7 +78,11 @@ export const NewContractor = (props) => {
             >
               Save
             </Button>
-            <Button variant="warning" className="mx-2">
+            <Button
+              variant="warning"
+              className="mx-2"
+              onClick={() => navigate("/dashboard/contractors")}
+            >
               Cancel
             </Button>
           </Col>
