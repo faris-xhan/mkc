@@ -8,16 +8,18 @@ import { Loader } from "./componets/Loader";
 import { Routes, Route } from "react-router-dom";
 import { NotFound } from "./componets/NotFound";
 import Container from "react-bootstrap/Container";
-import { EditMe } from "./pages/dashboard/editMe";
+import { EditMe } from "./pages/dashboard/contractors/editMe";
 import PublicRoute from "./componets/PublicRoute";
 import { onAuthStateChanged } from "firebase/auth";
 import PrivateRoute from "./componets/PrivateRoute";
 import { setUser } from "./redux/features/userSlice";
-import { Contractors } from "./pages/dashboard/contractors";
-import { Contractor } from "./pages/dashboard/contractor";
-import { NewContractor } from "./pages/dashboard/newContractor";
+import { Contractors } from "./pages/dashboard/contractors/contractors";
+import { Contractor } from "./pages/dashboard/contractors/contractor";
+import { NewContractor } from "./pages/dashboard/contractors/newContractor";
 import { DashboardHome } from "./pages/dashboard/dashboardHome";
-import { EditContractor } from "./pages/dashboard/editContractors";
+import { EditContractor } from "./pages/dashboard/contractors/editContractors";
+import { Departments } from "./pages/dashboard/departments/departments";
+import { NewDepartment } from "./pages/dashboard/departments/newDepartment";
 
 function App() {
   const dispatch = useDispatch();
@@ -73,6 +75,8 @@ function App() {
             path="contractors/edit/:contractorId"
             element={<EditContractor />}
           />
+          <Route path="departments" element={<Departments />} />
+          <Route path="departments/new" element={<NewDepartment />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>

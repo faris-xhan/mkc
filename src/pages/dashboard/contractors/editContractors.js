@@ -1,9 +1,9 @@
 import { Container, Form, Row, Col, Button, Alert } from "react-bootstrap";
 import { useDocument } from "react-firebase-hooks/firestore";
 import { useNavigate, useParams } from "react-router-dom";
-import { FormItem } from "../../componets/FormItem";
+import { FormItem } from "../../../componets/FormItem";
 import { doc, updateDoc } from "firebase/firestore";
-import { db } from "../../firebase/firebase";
+import { db } from "../../../firebase/firebase";
 import { useEffect, useState } from "react";
 
 export const EditContractor = (props) => {

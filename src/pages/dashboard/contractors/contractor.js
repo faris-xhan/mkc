@@ -7,7 +7,7 @@ import ButtonGroup from "react-bootstrap/ButtonGroup";
 import { Link, useParams } from "react-router-dom";
 import { doc } from "firebase/firestore";
 import { useDocument } from "react-firebase-hooks/firestore";
-import { db } from "../../firebase/firebase";
+import { db } from "../../../firebase/firebase";
 import { Alert } from "react-bootstrap";
 
 export const Contractor = (props) => {

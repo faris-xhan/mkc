@@ -2,8 +2,8 @@ import { collection, doc, setDoc } from "firebase/firestore";
 import { useState } from "react";
 import { Container, Form, Row, Col, Button, Alert } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import { FormItem } from "../../componets/FormItem";
-import { db } from "../../firebase/firebase";
+import { FormItem } from "../../../componets/FormItem";
+import { db } from "../../../firebase/firebase";
 
 const initialFormData = {
   firstName: "",

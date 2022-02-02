@@ -1,10 +1,10 @@
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
-import { db } from "../../firebase/firebase";
+import { db } from "../../../firebase/firebase";
 import { collection } from "firebase/firestore";
 import { useCollection } from "react-firebase-hooks/firestore";
-import { ContractorsTable } from "../../componets/ContractorsTable";
+import { ContractorsTable } from "../../../componets/ContractorsTable";
 import { Alert } from "react-bootstrap";
 
 export const Contractors = (props) => {
