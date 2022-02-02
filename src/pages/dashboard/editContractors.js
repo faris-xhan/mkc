@@ -38,6 +38,7 @@ export const EditContractor = (props) => {
     if (!loading && value?.data()) {
       setFormData(value?.data());
     }
+    //  eslint-disable-next-line
   }, [loading]);
 
   return (

@@ -5,7 +5,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import { Link, useParams } from "react-router-dom";
-import { collection, doc } from "firebase/firestore";
+import { doc } from "firebase/firestore";
 import { useDocument } from "react-firebase-hooks/firestore";
 import { db } from "../../firebase/firebase";
 import { Alert } from "react-bootstrap";
@@ -56,6 +56,7 @@ const InfoItem = (props) => {
   );
 };
 
+// eslint-disable-next-line
 const Other = (props) => (
   <>
     <Row className="mb-3">
