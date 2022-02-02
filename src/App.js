@@ -20,6 +20,7 @@ import { DashboardHome } from "./pages/dashboard/dashboardHome";
 import { EditContractor } from "./pages/dashboard/contractors/editContractors";
 import { Departments } from "./pages/dashboard/departments/departments";
 import { NewDepartment } from "./pages/dashboard/departments/newDepartment";
+import { EditDepartment } from "./pages/dashboard/departments/editDepartment";
 
 function App() {
   const dispatch = useDispatch();
@@ -77,6 +78,10 @@ function App() {
           />
           <Route path="departments" element={<Departments />} />
           <Route path="departments/new" element={<NewDepartment />} />
+          <Route
+            path="departments/edit/:departmentId"
+            element={<EditDepartment />}
+          />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
