@@ -46,7 +46,13 @@ const ActionsCell = ({ id }) => {
   return (
     <td>
       <ButtonGroup size="sm">
-        <Button variant="outline-primary">Edit</Button>
+        <Button
+          variant="outline-primary"
+          as={Link}
+          to={`/dashboard/contractors/edit/${id}`}
+        >
+          Edit
+        </Button>
         <Button variant="outline-primary" disabled={loading} onClick={onDelete}>
           Remove
         </Button>

@@ -17,6 +17,7 @@ import { Contractors } from "./pages/dashboard/contractors";
 import { Contractor } from "./pages/dashboard/contractor";
 import { NewContractor } from "./pages/dashboard/newContractor";
 import { DashboardHome } from "./pages/dashboard/dashboardHome";
+import { EditContractor } from "./pages/dashboard/editContractors";
 
 function App() {
   const dispatch = useDispatch();
@@ -68,6 +69,10 @@ function App() {
           <Route path="contractors" element={<Contractors />} />
           <Route path="contractors/new" element={<NewContractor />} />
           <Route path="contractors/:contractorId" element={<Contractor />} />
+          <Route
+            path="contractors/edit/:contractorId"
+            element={<EditContractor />}
+          />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
